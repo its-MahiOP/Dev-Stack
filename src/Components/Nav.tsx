@@ -1,8 +1,8 @@
 import Logo from "../assets/logo-text.png";
 
-const nav = () => {
+const Nav = () => {
     return (
-        <nav className="p-4">
+        <nav className="p-4 sticky top-0 bg-white shadow-md z-50">
             <div className="container mx-auto flex justify-between items-center">
                 <img src={Logo} alt="Logo" />
 
@@ -24,19 +24,18 @@ const nav = () => {
                     </li>
                 </ul>
 
-                <ul className="flex gap-4 items-center">
-                    <li>
-                        <a href="#signin">Sign In</a>
-                    </li>
-                    <li>
-                        <button className="btn btn-active btn-secondary rounded-4xl">
-                            Sign Up
-                        </button>
-                    </li>
-                </ul>
+                <div className="flex gap-4 items-center">
+                    <button className="hover:text-pink-500 cursor-pointer">
+                        Sign In
+                    </button>
+
+                    <button className="btn btn-active btn-secondary rounded-full">
+                        Sign Up
+                    </button>
+                </div>
             </div>
         </nav>
     );
 };
 
-export default nav;
+export default Nav;
