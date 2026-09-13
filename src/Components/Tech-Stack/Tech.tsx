@@ -27,26 +27,29 @@ const Tech = ({ techPromise }: TechProps) => {
     };
 
     return (
-        <section className="py-12 bg-slate-50 min-h-screen" id="technologies">
+        <section
+            className="py-8 md:py-12 bg-slate-50 min-h-screen"
+            id="technologies"
+        >
             <div className="container mx-auto px-4">
                 {/* Section Header */}
-                <div className="mb-8">
-                    <h2 className="text-4xl font-extrabold text-slate-900">
+                <div className="mb-8 text-center lg:text-left">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
                         Explore the{" "}
                         <span className="bg-linear-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                             Technologies
                         </span>
                     </h2>
-                    <p className="text-slate-500 mt-2 text-base">
+                    <p className="text-slate-500 mt-2 text-sm sm:text-base">
                         Pick one technology per category to build your ideal
                         stack.
                     </p>
                 </div>
 
-                {/* 3-Column Cards Grid + Right Sidebar */}
-                <div className="grid grid-cols-4 gap-8 items-start">
-                    {/* Left Side: 3-Column Technology Cards Grid */}
-                    <div className="col-span-3 grid grid-cols-3 gap-6">
+                {/* Responsive Main Layout Container */}
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+                    {/* Left Side: Cards Grid (1 col mobile, 2 cols tablet, 3 cols desktop) */}
+                    <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {technologies.map((item) => {
                             const isAdded = selectedStack.some(
                                 (tech) => tech.id === item.id,
@@ -55,27 +58,30 @@ const Tech = ({ techPromise }: TechProps) => {
                             return (
                                 <div
                                     key={item.id}
-                                    className="bg-white rounded-2xl p-6 border border-slate-100 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+                                    className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-100 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
                                 >
-                                    {/* Top Row: Icon + Badge */}
                                     <div>
-                                        <div className="flex justify-between items-start mb-4">
-                                            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-50 p-2 border border-slate-100">
-                                                <img
-                                                    src={item.icon}
-                                                    alt={item.name}
-                                                    className="w-8 h-8 object-contain"
-                                                />
+                                        {/* Top Row: Icon + Name + Badge */}
+                                        <div className="flex justify-between items-center mb-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-cyan-50/50 p-2 border border-slate-100">
+                                                    <img
+                                                        src={item.icon}
+                                                        alt={item.name}
+                                                        className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                                                    />
+                                                </div>
+                                                <h3 className="text-lg sm:text-xl font-bold text-slate-800">
+                                                    {item.name}
+                                                </h3>
                                             </div>
+
                                             <span className="px-3 py-1 text-xs font-semibold rounded-full bg-cyan-50 text-cyan-600 border border-cyan-100">
                                                 {item.badge}
                                             </span>
                                         </div>
 
-                                        {/* Card Title & Description */}
-                                        <h3 className="text-xl font-bold text-slate-800 mb-2">
-                                            {item.name}
-                                        </h3>
+                                        {/* Description */}
                                         <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
                                             {item.description}
                                         </p>
@@ -119,9 +125,10 @@ const Tech = ({ techPromise }: TechProps) => {
                         })}
                     </div>
 
-                    {/* Right Side: Your Stack Sidebar) */}
-                    <div className="col-span-1 bg-white rounded-2xl p-6 border border-slate-100 shadow-xs sticky top-24">
-                        <div className="flex items-center justify-between mb-2">
+                    {/* Right Side: Your Stack Panel (Sidebar on desktop, bottom block on mobile) */}
+                    <div className="lg:col-span-1 bg-white rounded-3xl p-6 border border-slate-100 shadow-xs lg:sticky lg:top-24 w-full">
+                        {/* Panel Header */}
+                        <div className="mb-4">
                             <h3 className="text-xl font-bold text-slate-900">
                                 Your Stack
                             </h3>
