@@ -77,5 +77,3 @@ Conditional rendering means displaying specific UI elements or components based 
 
 - **Parent to Child:** Data is passed down via `props`.
 - **Child to Parent:** The parent passes a callback function down as a prop to the child. When an event occurs, the child calls that function and passes updated data or events back up to the parent as arguments.
-
----
