@@ -10,7 +10,7 @@ const Banner = () => {
                     {/* Heading */}
                     <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
                         Build Your Ideal <br className="hidden sm:inline" />
-                        <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        <span className="text-brand-gradient">
                             Development Stack
                         </span>
                     </h1>
@@ -27,7 +27,7 @@ const Banner = () => {
                         {/* Gradient Fill Button */}
                         <a
                             href="#technologies"
-                            className="w-1/2 sm:w-52 flex items-center justify-center py-3 rounded-xl text-white font-medium text-sm sm:text-base bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 hover:opacity-90 transition-opacity shadow-md text-center"
+                            className="w-1/2 sm:w-52 flex items-center justify-center py-3 rounded-xl text-white font-medium text-sm sm:text-base bg-brand-gradient hover:opacity-90 transition-opacity shadow-md text-center"
                         >
                             Explore Technologies
                         </a>

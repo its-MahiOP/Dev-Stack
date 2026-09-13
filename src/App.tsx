@@ -7,6 +7,16 @@ import Tech from "./Components/Tech-Stack/Tech";
 import type { ITechType } from "./Type/TechType";
 import Footer from "./Components/Footer";
 
+// Loading State
+const LoadingFallback = () => (
+    <div className="py-24 flex flex-col items-center justify-center gap-4 bg-slate-50">
+        <span className="loading loading-spinner loading-lg text-pink-500"></span>
+        <p className="text-slate-500 font-medium text-sm animate-pulse">
+            Loading Dev Stack Data...
+        </p>
+    </div>
+);
+
 const techFetch = async (): Promise<ITechType[]> => {
     const response = await fetch("/data.json");
     const data = await response.json();
@@ -19,7 +29,7 @@ function App() {
         <>
             <Nav />
             <Banner />
-            <Suspense fallback={<p>Loading.....</p>}>
+            <Suspense fallback={<LoadingFallback />}>
                 <Tech techPromise={techPromise} />
             </Suspense>
             <Footer />

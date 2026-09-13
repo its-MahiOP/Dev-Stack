@@ -45,7 +45,7 @@ const Tech = ({ techPromise }: TechProps) => {
                 <div className="mb-8 text-center lg:text-left">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
                         Explore the{" "}
-                        <span className="bg-linear-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        <span className="text-brand-gradient">
                             Technologies
                         </span>
                     </h2>
