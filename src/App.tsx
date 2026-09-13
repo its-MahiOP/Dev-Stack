@@ -5,6 +5,7 @@ import Banner from "./Components/Banner";
 import Nav from "./Components/Nav";
 import Tech from "./Components/Tech-Stack/Tech";
 import type { ITechType } from "./Type/TechType";
+import Footer from "./Components/Footer";
 
 const techFetch = async (): Promise<ITechType[]> => {
     const response = await fetch("/data.json");
@@ -21,6 +22,7 @@ function App() {
             <Suspense fallback={<p>Loading.....</p>}>
                 <Tech techPromise={techPromise} />
             </Suspense>
+            <Footer />
             <ToastContainer position="top-right" autoClose={3000} />
         </>
     );
