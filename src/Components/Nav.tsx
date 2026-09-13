@@ -35,7 +35,7 @@ const Nav = () => {
                             className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52 font-medium"
                         >
                             <li>
-                                <a href="#home" className="text-pink-500">
+                                <a href="#home" className="text-brand-gradient">
                                     Home
                                 </a>
                             </li>
@@ -77,7 +77,7 @@ const Nav = () => {
 
                     {/* Desktop Center Links */}
                     <ul className="hidden lg:flex gap-6 items-center font-medium">
-                        <li className="text-pink-500">
+                        <li className="text-brand-gradient">
                             <a href="#home">Home</a>
                         </li>
                         <li>
@@ -101,7 +101,7 @@ const Nav = () => {
                         Sign In
                     </button>
 
-                    <button className="btn btn-secondary rounded-full btn-sm sm:btn-md">
+                    <button className="bg-brand-gradient btn btn-secondary rounded-full btn-sm sm:btn-md">
                         Sign Up
                     </button>
                 </div>
