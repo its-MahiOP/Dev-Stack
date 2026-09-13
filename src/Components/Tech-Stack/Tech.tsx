@@ -1,4 +1,5 @@
 import { use, useState } from "react";
+import { toast } from "react-toastify";
 import type { ITechType } from "../../Type/TechType";
 
 interface TechProps {
@@ -12,18 +13,26 @@ const Tech = ({ techPromise }: TechProps) => {
     const handleAddToStack = (item: ITechType) => {
         const exists = selectedStack.some((tech) => tech.id === item.id);
         if (exists) {
-            alert(`${item.name} is already in your stack!`);
+            toast.warn(`${item.name} is already in your stack!`);
             return;
         }
         setSelectedStack((prev) => [...prev, item]);
+        toast.success(`Added ${item.name} to your stack!`);
     };
 
     const handleRemoveFromStack = (id: string) => {
+        const itemToRemove = selectedStack.find((item) => item.id === id);
         setSelectedStack((prev) => prev.filter((item) => item.id !== id));
+        if (itemToRemove) {
+            toast.error(`Removed ${itemToRemove.name} from your stack.`);
+        }
     };
 
     const handleClearStack = () => {
         setSelectedStack([]);
+        toast.error("Cleared all technologies from your stack!", {
+            theme: "colored",
+        });
     };
 
     return (
